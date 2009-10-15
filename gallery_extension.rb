@@ -1,9 +1,9 @@
 require 'tempfile'           
-begin
-  require_dependency 'application'   
-rescue
-  require_dependency 'application_controller'
-end  
+#begin
+#  require_dependency 'application'   
+#rescue
+#  require_dependency 'application_controller'
+#end  
 require_dependency 'open-uri'
 require_dependency 'exifr/jpeg'
 require_dependency 'exifr/tiff'

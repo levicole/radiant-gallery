@@ -5,7 +5,7 @@ class GalleryItemsController < ApplicationController
   
   before_filter :find_gallery
   before_filter :find_item, :only => [:show, :edit, :update, :destroy, :move]
-         
+  protect_from_forgery :only => :create        
   def index
   end   
   

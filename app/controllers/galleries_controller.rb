@@ -1,7 +1,7 @@
 class GalleriesController < ApplicationController
   helper :gallery_items
   before_filter :find_gallery, :except => [:index, :list, :new, :create, :reorder, :update_order]
-  
+  protect_from_forgery :only => :index 
   def index
     conditions = params.include?(:parent_id) ? ["parent_id = ?", params[:parent_id]] : "parent_id IS NULL"
     @galleries = Gallery.find(:all, :conditions => conditions, :order => 'position')
